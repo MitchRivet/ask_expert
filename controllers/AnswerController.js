@@ -4,4 +4,5 @@ askExpert.controller('AnswerCtrl', function AnswerCtrl($scope, $stateParams, Que
     $scope.question.answers.push({ answer: $scope.questionAnswer });
     $scope.questionAnswer = null;
   }
+  console.log($scope.question); 
 });
