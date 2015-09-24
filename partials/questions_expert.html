@@ -3,20 +3,17 @@
   <h1>Help a dummy out!</h1>
   <h1>Questions dummies have asked:</h1>
 
+  <h2>no answers</h2>
   <ul>
-    <li ng-repeat="item in filtered = (questions | filter:{ answers: '![]'})">
-      <a ui-sref="question_answers({ questionId: item.id })">{{ item.question }}</a>
-    </li>
-  </ul>
-
   <li ng-repeat="item in filtered = (questions | filter: filterFn)">
-    <a ui-sref="question_answers({ questionId: item.id })">{{ item.question }}</a>
+    <a ui-sref="question_answers_expert({ questionId: item.id })">{{ item.question }}</a>
   </li>
   </ul>
-  <h1>Questions with answers:</h1>
+
+  <h2>All Questions:</h2>
   <ul>
-    <li ng-repeat="item in filtered = (questions | filter: !{ answers: '[]'})">
-      <a ui-sref="question_answers({ questionId: item.id })">{{ item.question }}</a>
+    <li ng-repeat="item in questions">
+      <a ui-sref="question_answers_expert({ questionId: item.id })">{{ item.question }}</a>
     </li>
   </ul>
 </div>

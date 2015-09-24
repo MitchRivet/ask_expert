@@ -8,8 +8,8 @@ askExpert.config(function($stateProvider, $urlRouterProvider) {
   });
 
   $stateProvider.state('ask', {
-    url:"/questions",
-    templateUrl: "partials/questions.html",
+      url:"/questions_user",
+    templateUrl: "partials/questions_user.html",
     controller: 'QuestionsCtrl'
   });
 
@@ -19,9 +19,15 @@ askExpert.config(function($stateProvider, $urlRouterProvider) {
     controller: 'QuestionsCtrl'
   });
 
-  $stateProvider.state ('question_answers', {
-    url: "/:questionId",
-    templateUrl: "partials/question_answers.html",
+  $stateProvider.state ('question_answers_expert', {
+    url: "/:questionId/expert",
+    templateUrl: "partials/question_answers_expert.html",
+    controller: 'AnswerCtrl'
+  });
+
+  $stateProvider.state ('question_answers_user', {
+    url: "/:questionId/user",
+    templateUrl: "partials/question_answers_user.html",
     controller: 'AnswerCtrl'
   });
 

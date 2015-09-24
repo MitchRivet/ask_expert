@@ -1,0 +1,11 @@
+<div ng-show="question.answers.length">
+  <h2> Answers: </h2>
+  <ul>
+  <li ng-repeat="item in question.answers">
+    <div class="form-group">
+    <form ng-submit="approveAnswer(item.answer, item.id)" class="form-inline" role="form">
+      <div class="animate-show" ng-show="item.approved == true"><span class="glyphicon glyphicon-thumbs-up"></span></div>{{ item.answer }} <input type="submit" value="Approve">
+  </div>
+  </li>
+</ul>
+</div>
