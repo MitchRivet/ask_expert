@@ -10,10 +10,19 @@
     <script src="services/QuestionsFactory.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="css/styles.css"> 
   </head>
   <body>
+    <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#/questions_user">Ask a Q</a></li>
+      <li><a href="#/questions_expert">Got the Answers?</a></li>
+
+    </ul>
+  </div>
       <div class="container">
+
         <div ui-view></div>
       </div>
   </body>
