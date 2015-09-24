@@ -18,4 +18,22 @@
   </form>
 </div>
 
+<div ng-show="questions.length">
+    <h4>Search Questions</h4>
+    <form class="form-inline" role="form">
+      <div class="form-group">
+        <input ng-model="query" type="text" class="form-control" placeholder="Search">
+      </div>
+    </form>
+
+    <h1>Questions dummies have asked:</h1>
+    <ul>
+      <li ng-repeat="item in filtered = (questions | filter:query)">
+        <a ui-sref="question_answers_user({ questionId: item.id })">{{ item.question }}</a>
+      </li>
+    </ul>
+
+</div>
+
+
 <div ui-view></div>

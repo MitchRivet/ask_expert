@@ -1,11 +1,19 @@
 <div ng-show="question.answers.length">
   <h2> Answers: </h2>
+
   <ul>
-  <li ng-repeat="item in question.answers">
+  <li ng-repeat="item in question.answers | orderBy: '-votes'">
     <div class="form-group">
-    <form ng-submit="approveAnswer(item.answer, item.id)" class="form-inline" role="form">
+    <form ng-submit="approveAnswer(item.answer, item.id, item.votes)" class="form-inline" role="form">
       <div class="animate-show" ng-show="item.approved == true"><span class="glyphicon glyphicon-thumbs-up"></span></div>{{ item.answer }} <input type="submit" value="Approve">
+
+      <i title="Up Votes" ng-click="upVote(item.answer, item.id, item.approved, item.votes)" class="fa fa-arrow-circle-up fa-2x" style='cursor:pointer'></i>
+
+    <br/> <i title="Down Votes" ng-click="downVote(item.answer, item.id, item.approved, item.votes)" class="fa fa-arrow-circle-down fa-2x" style='cursor:pointer'></i>
+      <p>Votes: {{ item.votes }}</p>
   </div>
   </li>
 </ul>
+
+        
 </div>
