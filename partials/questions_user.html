@@ -1,3 +1,28 @@
+<div class="row">
+  <div ng-show="questions.length">
+      <h4>Search Questions</h4>
+      <form name="search" class="form-inline" role="form">
+        <div class="form-group">
+          <input ng-model="query" type="text" class="form-control" placeholder="Search">
+        </div>
+      </form>
+
+
+  <!-- (questions|filter:query).length > 0 -->
+
+      <ul>
+        <li ng-repeat="item in filtered = (questions | filter:query)">
+          <a ui-sref="question_answers_user({ questionId: item.id })">{{ item.question }}</a>
+        </li>
+      </ul>
+
+
+
+
+</div>
+
+<div class="well">
+<div class="row">
 <div ng-show="questions.length">
   <h1>Questions dummies have asked:</h1>
   <ul>
@@ -7,7 +32,7 @@
   </ul>
 </div>
 
-<div class="col-md-4">
+
   <h3>What questions ya got?</h3>
     <form ng-submit="QuestionsFactory.addQuestion()" class="form-inline" role="form">
     <div class="form-group">
@@ -17,23 +42,6 @@
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
 </div>
-
-<div ng-show="questions.length">
-    <h4>Search Questions</h4>
-    <form class="form-inline" role="form">
-      <div class="form-group">
-        <input ng-model="query" type="text" class="form-control" placeholder="Search">
-      </div>
-    </form>
-
-    <h1>Questions dummies have asked:</h1>
-    <ul>
-      <li ng-repeat="item in filtered = (questions | filter:query)">
-        <a ui-sref="question_answers_user({ questionId: item.id })">{{ item.question }}</a>
-      </li>
-    </ul>
-
 </div>
-
 
 <div ui-view></div>
